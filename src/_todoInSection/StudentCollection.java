@@ -67,38 +67,56 @@ public class StudentCollection implements TableModel{
 
 @Override
 public int getRowCount() {
-	// TODO Auto-generated method stub
 	return size();
 }
 
 @Override
 public int getColumnCount() {
-	// TODO Auto-generated method stub
 	return 4;
 }
 
 @Override
 public String getColumnName(int columnIndex) {
-	// TODO Auto-generated method stub
-	return null;
+	switch(columnIndex){
+		case 0: return "Name";
+		case 1: return "Major";
+		case 2: return "GPA";
+		case 3: return "Age";
+		default: return "ERROR: That is not a column.";			
+	}
 }
 
 @Override
 public Class<?> getColumnClass(int columnIndex) {
-	// TODO Auto-generated method stub
-	return null;
+	switch(columnIndex){
+		case 0: return String.class;
+		case 1: return String.class;
+		case 2: return Double.class;
+		case 3: return Integer.class;
+		default: return Object.class;			
+	}
 }
 
 @Override
 public boolean isCellEditable(int rowIndex, int columnIndex) {
-	// TODO Auto-generated method stub
-	return false;
+	switch(columnIndex){
+		case 0: return false;
+		case 1: return false;
+		case 2: return true;
+		case 3: return false;
+		default: return false;			
+	}
 }
 
 @Override
 public Object getValueAt(int rowIndex, int columnIndex) {
-	// TODO Auto-generated method stub
-	return null;
+	switch(columnIndex){
+		case 0: return theStudents.get(rowIndex).getName();
+		case 1: return theStudents.get(rowIndex).getMajor();
+		case 2: return theStudents.get(rowIndex).getGPA();
+		case 3: return theStudents.get(rowIndex).getAge();
+		default: return new Object();			
+	}
 }
 
 @Override
