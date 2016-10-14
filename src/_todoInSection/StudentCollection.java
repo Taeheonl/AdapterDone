@@ -3,6 +3,9 @@ package _todoInSection;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.event.TableModelListener;
+import javax.swing.table.TableModel;
+
 import model.Student;
 
 /**
@@ -16,7 +19,7 @@ import model.Student;
 // (after adding implements ListModel to the class heading).
 //
 // Note: Some ListModel need not be implemented.
-public class StudentCollection  {
+public class StudentCollection implements TableModel{
 
   private List<Student> theStudents;
 
@@ -61,5 +64,59 @@ public class StudentCollection  {
     }
     return null; // not found
   }
+
+@Override
+public int getRowCount() {
+	// TODO Auto-generated method stub
+	return size();
+}
+
+@Override
+public int getColumnCount() {
+	// TODO Auto-generated method stub
+	return 4;
+}
+
+@Override
+public String getColumnName(int columnIndex) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public Class<?> getColumnClass(int columnIndex) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public boolean isCellEditable(int rowIndex, int columnIndex) {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+@Override
+public Object getValueAt(int rowIndex, int columnIndex) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void addTableModelListener(TableModelListener l) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void removeTableModelListener(TableModelListener l) {
+	// TODO Auto-generated method stub
+	
+}
 
 }
